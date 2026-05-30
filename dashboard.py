@@ -10,7 +10,19 @@ st.set_page_config(
 
 
 # Load data
-df = pd.read_csv("cleaned_data.csv")
+uploaded_file = st.sidebar.file_uploader(
+    "Upload Sales Dataset",
+    type=["csv"]
+)
+
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
+
+    st.sidebar.success("✅ Dataset uploaded successfully!")
+    st.sidebar.write(f"Rows Loaded: {len(df)}")
+
+else:
+    df = pd.read_csv("cleaned_data.csv")
 
 
 st.title("📊 Sales Insight Dashboard")
@@ -164,6 +176,9 @@ st.dataframe(
             "Region",
             "Category",
             "Sales"
+        ]
+    ].head(20)
+)
         ]
     ].head(20)
 )
