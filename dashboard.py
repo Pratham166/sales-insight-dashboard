@@ -10,7 +10,7 @@ st.set_page_config(
 
 
 # Load data
-df = pd.read_csv("output/cleaned_data.csv")
+df = pd.read_csv("cleaned_data.csv")
 
 
 st.title("📊 Sales Insight Dashboard")
