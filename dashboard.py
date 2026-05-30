@@ -176,9 +176,7 @@ st.dataframe(
             "Region",
             "Category",
             "Sales"
-        ]
-    ].head(20)
-)
+ 
         ]
     ].head(20)
 )
